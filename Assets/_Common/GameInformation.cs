@@ -10,37 +10,37 @@ using UnityEditor;
 public class GameInformation : MonoBehaviour
 {
 
-    public static GameInformation Instance
+  public static GameInformation Instance
+  {
+    get
     {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<GameInformation>();
-                DontDestroyOnLoad(_instance.gameObject);
-            }
-            return _instance;
-        }
+      if (_instance == null)
+      {
+        _instance = FindObjectOfType<GameInformation>();
+        DontDestroyOnLoad(_instance.gameObject);
+      }
+      return _instance;
     }
-    static GameInformation _instance;
+  }
+  static GameInformation _instance;
 
-    void Awake()
+  void Awake()
+  {
+    if (_instance == null)
     {
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(_instance.gameObject);
-        }
-        else if (this != _instance)
-        {
-            Destroy(gameObject);
-        }
+      _instance = this;
+      DontDestroyOnLoad(_instance.gameObject);
     }
-    public List<List<GameObject>> stages = new List<List<GameObject>>();
+    else if (this != _instance)
+    {
+      Destroy(gameObject);
+    }
+  }
+  public List<GameObject> stages = new List<GameObject>();
 
-    private void Start()
-    {
-    }
+  private void Start()
+  {
+  }
 
 
 }

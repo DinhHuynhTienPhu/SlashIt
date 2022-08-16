@@ -45,21 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataManager:
     firtsTime: 1
-    mazePlay: 1
-    pyramidPlay: 1
-    characterAvatarIndex: 0
-    energy: 0
-    gold: 0
-    pyramidDatas: []
-    unlockedPyramid: 1
-    boughtCharacters:
-    - 
-    curentCharacter: Sheriff_w
-    showMummyDes: 0
-    showRedMummyDes: 0
-    showScorpionDes: 0
-    showScorpionRedDes: 0
-    showSkullDes: 0
-    showkeyAndGateDes: 0
+    stagePlay: 1
     soundvolume: 7
     musicvolume: 7
