@@ -57,7 +57,7 @@ public class CharacterSlash : MonoBehaviour
       foreach (var h in hits)
       {
         var enemy = h.collider.gameObject.GetComponent<EnemyController>();
-        if (enemy != null && enemy.isTackingDamage == false)
+        if (enemy != null)
         {
           enemy.TakeDamage();
           enemyHits++;
@@ -95,16 +95,16 @@ public class CharacterSlash : MonoBehaviour
       Debug.Log("trigger wal");
       StopSlashing();
     }
-    else if (collision.gameObject.tag.Contains("enemy"))
-    {
-      Debug.Log("touch enemy");
-      if (isSlashing == false)
-      {
-        hp -= 1;
-        Camera.main.transform.DOShakePosition(0.2f, 1);
-        GameController.Instance.ShowRedPanel();
-      }
-    }
+    // else if (collision.gameObject.tag.Contains("enemy"))
+    // {
+    //   Debug.Log("touch enemy");
+    //   if (isSlashing == false)
+    //   {
+    //     hp -= 1;
+    //     Camera.main.transform.DOShakePosition(0.2f, 1);
+    //     GameController.Instance.ShowRedPanel();
+    //   }
+    // }
     else if (collision.gameObject.tag.Contains("winPortal"))
     {
       GameController.Instance.Win();

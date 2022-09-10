@@ -97,5 +97,23 @@ public class GameController : MonoBehaviour
   {
     GameObject stage = Instantiate(GameInformation.Instance.stages[DataManager.Instance.stagePlay - 1], Vector3.zero, Quaternion.identity);
   }
+  [ContextMenu("HideWalls")]
+  public void HideWalls()
+  {
+    GameObject[] walls = GameObject.FindGameObjectsWithTag("wall");
+    foreach (var item in walls)
+    {
+      item.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+    }
+  }
+  [ContextMenu("ShowWalls")]
+  public void ShowWalls()
+  {
+    GameObject[] walls = GameObject.FindGameObjectsWithTag("wall");
+    foreach (var item in walls)
+    {
+      item.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+    }
+  }
 
 }

@@ -13,10 +13,11 @@ public class EnemyController : MonoBehaviour
     public GameObject swordfx;
     int desnumber = 0;
     Vector3 oldPos, newPos;
-    
-    public bool isTackingDamage = false;
 
-    
+    public bool isTackingDamage = false;
+    public List<GameObject> objsDestroyWhenDie = new List<GameObject>();
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,20 +33,26 @@ public class EnemyController : MonoBehaviour
         oldPos = newPos;
         newPos = transform.position;
         if (oldPos.x > newPos.x)
-            transform.localScale = new Vector3(Mathf.Abs( transform.localScale.x)*1, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * 1, transform.localScale.y, transform.localScale.z);
         else
-            transform.localScale = new Vector3(Mathf.Abs( transform.localScale.x)*-1, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
 
-        if (heath <= 0) {
+        if (heath <= 0)
+        {
             GameController.Instance.ShowPoofFx(transform.position);
+            foreach (GameObject obj in objsDestroyWhenDie)
+            {
+                Destroy(obj);
+            }
             Destroy(gameObject);
         }
 
     }
-    IEnumerator MoveToDes() {
+    IEnumerator MoveToDes()
+    {
         float timer = 0;
-        Vector3 endPos = movePoses[desnumber]+myCenter;
-        while (timer<stayDelay)
+        Vector3 endPos = movePoses[desnumber] + myCenter;
+        while (timer < stayDelay)
         {
             transform.position = Vector3.Lerp(transform.position, endPos, Time.deltaTime * mySpeed);
             timer += Time.deltaTime;
@@ -55,7 +62,8 @@ public class EnemyController : MonoBehaviour
         if (desnumber == movePoses.Count) desnumber = 0;
         StartCoroutine(MoveToDes());
     }
-    public void TakeDamage(int dam=1) {
+    public void TakeDamage(int dam = 1)
+    {
         //if (isTackingDamage) return;
 
         isTackingDamage = true;
@@ -63,7 +71,8 @@ public class EnemyController : MonoBehaviour
         spriteRenderer.color = Color.red;
         swordfx.SetActive(true);
         swordfx.transform.DOShakeScale(0.27f);
-        transform.DOShakePosition(0.3f,0.5f).OnComplete(()=> {
+        transform.DOShakePosition(0.3f, 0.5f).OnComplete(() =>
+        {
             isTackingDamage = false;
             spriteRenderer.color = Color.white;
             swordfx.SetActive(false);

@@ -46,3 +46,5 @@ MonoBehaviour:
   stages:
   - {fileID: 747814489874151156, guid: 26ae80a58cb4ab64a90be5676ef9532a, type: 3}
   - {fileID: 888869901793178650, guid: 45f5d994fd14a26469f64a4ee1af4bc1, type: 3}
+  - {fileID: 1512906174637231410, guid: 1bf60ff992d9e2745848bbae92a09a92, type: 3}
+  - {fileID: 7146388349396619330, guid: 5bdaf3830032ebd42aba0e2f1cf1be80, type: 3}
