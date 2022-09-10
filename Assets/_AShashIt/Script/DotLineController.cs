@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -56,6 +56,8 @@ public class DotLineController : MonoBehaviour
         double delta_x = B.x - A.x;
         double delta_y = B.y - A.y;
         float theta_radians =  Mathf.Atan2((float)delta_y, (float)delta_x) * 180 / 3.14159f;
+        
         return theta_radians;
+
     }
 }
