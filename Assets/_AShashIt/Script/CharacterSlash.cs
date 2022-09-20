@@ -26,7 +26,7 @@ public class CharacterSlash : MonoBehaviour
     if (mySpriteRendererAvt == null) mySpriteRendererAvt = GetComponent<SpriteRenderer>();
   }
 
-  // Update is called once per frame
+  // Update is called once per frame , set fps= 60
   void Update()
   {
     if (Input.GetMouseButtonDown(0))
