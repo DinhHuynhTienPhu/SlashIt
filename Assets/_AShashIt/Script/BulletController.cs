@@ -8,7 +8,7 @@ public class BulletController : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-
+      //do notthoing here
   }
 
   // Update is called once per frame
