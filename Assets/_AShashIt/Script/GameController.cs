@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
   public GameObject worldTextPrefab;
   public GameObject poofEffectPrefab;
   public GameObject hitEffectPrefab;
+  public GameObject bloodPrefeb;
+  public List<ParticleSystem> winParticles;
 
   public GameObject redPanel;
   public GameObject winPanel, losePanel, tutpanel;
@@ -26,6 +28,11 @@ public class GameController : MonoBehaviour
 
       hasPlayedLoseSound =false;
       AudioController.Play("bgm");
+
+      foreach (var item in winParticles)
+      {
+          item.Stop();
+      }
   }
 
   // Update is called once per frame
@@ -52,6 +59,10 @@ public class GameController : MonoBehaviour
   {
     AudioController.Play("win");
     winPanel.gameObject.SetActive(true);
+    foreach (var item in winParticles)
+      {
+          item.Play();
+      }
   }
   public void Lose()
   {
@@ -88,6 +99,13 @@ public class GameController : MonoBehaviour
     var x = Instantiate(hitEffectPrefab, pos, Quaternion.identity);
     x.transform.localScale *= scale;
     Destroy(x, 1);
+  }
+    public void ShowBloodFx(Vector3 pos, float scale = 1)
+  {
+    var x = Instantiate(bloodPrefeb, pos, Quaternion.identity);
+    x.transform.localScale *= scale;
+    x.transform.eulerAngles = new Vector3(0,0,Random.Range(0,360));
+    Destroy(x, 10);
   }
   public void ShowRedPanel()
   {

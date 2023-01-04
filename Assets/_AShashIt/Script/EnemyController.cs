@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -78,5 +78,7 @@ public class EnemyController : MonoBehaviour
             swordfx.SetActive(false);
         });
         GameController.Instance.ShowTextAt("-" + dam, transform.position);
+        GameController.Instance.ShowHitFx(transform.position,1.4f);
+        GameController.Instance.ShowBloodFx(transform.position,Random.Range(0.6f,2f));
     }
 }
