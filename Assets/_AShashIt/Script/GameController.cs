@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
       LoadStage();
 
       hasPlayedLoseSound =false;
+      AudioController.Play("bgm");
   }
 
   // Update is called once per frame
