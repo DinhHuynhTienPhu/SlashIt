@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,11 +17,14 @@ public class GameController : MonoBehaviour
 
   public GameObject redPanel;
   public GameObject winPanel, losePanel, tutpanel;
+  public bool hasPlayedLoseSound =false;
   void Start()
   {
     Instance = this;
     if (isTesting == false)
       LoadStage();
+
+      hasPlayedLoseSound =false;
   }
 
   // Update is called once per frame
@@ -46,10 +49,16 @@ public class GameController : MonoBehaviour
 
   public void Win()
   {
+    AudioController.Play("win");
     winPanel.gameObject.SetActive(true);
   }
   public void Lose()
   {
+    if(hasPlayedLoseSound==false){
+    AudioController.Play("lose");
+    hasPlayedLoseSound =true;
+    }
+
     losePanel.gameObject.SetActive(true);
   }
 

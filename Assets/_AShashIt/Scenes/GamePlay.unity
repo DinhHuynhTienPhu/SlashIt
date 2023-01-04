@@ -753,41 +753,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AutoLoadSingleTons
       objectReference: {fileID: 0}
-    - target: {fileID: 4056866007512579274, guid: 4c00effd77c81334e8be1a9f70132f36,
-        type: 3}
-      propertyPath: singletonObjects.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056866007512579274, guid: 4c00effd77c81334e8be1a9f70132f36,
-        type: 3}
-      propertyPath: singletonObjects.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056866007512579274, guid: 4c00effd77c81334e8be1a9f70132f36,
-        type: 3}
-      propertyPath: singletonObjects.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056866007512579274, guid: 4c00effd77c81334e8be1a9f70132f36,
-        type: 3}
-      propertyPath: singletonObjects.Array.data[5]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056866007512579274, guid: 4c00effd77c81334e8be1a9f70132f36,
-        type: 3}
-      propertyPath: singletonObjects.Array.data[6]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056866007512579274, guid: 4c00effd77c81334e8be1a9f70132f36,
-        type: 3}
-      propertyPath: singletonObjects.Array.data[7]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056866007512579274, guid: 4c00effd77c81334e8be1a9f70132f36,
-        type: 3}
-      propertyPath: singletonObjects.Array.data[8]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6482466972987523672, guid: 4c00effd77c81334e8be1a9f70132f36,
         type: 3}
       propertyPath: m_RootOrder

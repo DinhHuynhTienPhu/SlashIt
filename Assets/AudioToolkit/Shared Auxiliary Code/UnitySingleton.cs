@@ -1,4 +1,4 @@
-﻿/*************************************************************
+/*************************************************************
  *       Unity Singleton Class (c) by ClockStone 2011        *
  * 
  * Allows to use a script components like a singleton

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -49,5 +49,6 @@ public class EnemyShoot : MonoBehaviour
       bullet.GetComponent<BulletController>().SetDirection(dir, setting.speed);
       bullet.GetComponent<BulletController>().damage = setting.damage;
     }
+    AudioController.Play("pop");
   }
 }

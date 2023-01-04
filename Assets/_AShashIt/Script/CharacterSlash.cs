@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -61,8 +61,10 @@ public class CharacterSlash : MonoBehaviour
         {
           enemy.TakeDamage();
           enemyHits++;
+          AudioController.Play("hurt");
         }
       }
+      AudioController.Play("slash");
       if (enemyHits > 1) GameController.Instance.ShowTextAt("COMBO x" + enemyHits, characterEndPos, scale: 2, color: Color.yellow);
       #endregion
     }
@@ -147,6 +149,7 @@ public class CharacterSlash : MonoBehaviour
   }
   public void TakeDamage(int damage = 1)
   {
+    AudioController.Play("hurt");
     hp -= damage;
     Camera.main.transform.DOShakePosition(0.2f, 1);
     GameController.Instance.ShowRedPanel();
