@@ -81,4 +81,18 @@ public class EnemyController : MonoBehaviour
         GameController.Instance.ShowHitFx(transform.position,1.4f);
         GameController.Instance.ShowBloodFx(transform.position,Random.Range(0.6f,2f));
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        print("trigger enter");
+        if(other.gameObject.tag=="mybullet"){
+            TakeDamage(1);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        print("collision");
+        if(other.gameObject.tag=="mybullet"){
+            TakeDamage(1);
+        }
+    }
 }
